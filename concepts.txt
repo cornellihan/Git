@@ -1,0 +1,27 @@
+Version Control System or VCS is a software that keeps track of files. So we can simply roll back to some previous version of that project easily. And by this, some of developers can work together in a project. There are 3 stages/categories of a Version Control System. And they are Local, Central and Distributed VCS.
+
+Local VCS: Here the software just keeps track of files in our local system. So we can roll back to any previous version of that project whenever we want in our system. But here is a problem. We can create a project and make some version of it. But if somehow our system is cracked, then the whole project will go in vain :)
+
+Central VCS: This is simple, we just use a central server where developers push there projects and pull from there to avoid the problem that happens on Local VCS. But here we can also see a problem. If somehow our central server get spoiled, then our whole project again will go in vain.
+
+Distributed VCS: So all the solution of Central VCS and Local VCS is here. Here we push a file to the server and it will be pulled from all the developers. So the full backup will be on all the developers system and on the server. So if anyone's system get broken, then he can pull all the project from the central server. And if the server get cracked, then we can create a new server and can push teh full backup from our system.
+
+Btw GIT has some features.
+1. It keeps snapshot of particular versions of a project.
+2. It has integrity. It gives some checksum of a file so we can ensure that no one modified our file. Checksum is a string that comes with that file. And if anyone modify that file just a little point, that string will be change. So with the help of checksum, we will get notified if our file has modified.
+3. Almost every operation is local.
+
+
+
+Git Ignoring Concepts:
+
+If we want to ignore a file, then we can create a file with extension .gitignore and put the filename inside the .gitignore file. So after staging or also commiting the .gitignore file, git will ignore the file that we had put on .gitignore file. That means if we modify that file, git won't show that we need to stage that file. And if we need to ignore other files with the same extension that we had ignored before, then we need to write something like this-
+*.log
+
+Sometimes we create some folder in our local repository. But if the folder is empty, then git won't track the folder. But if there are something on that folder, then git will notice that folder. So if we want to ignore that folder, we can just write the folder name and put a '/' after the name ends in a new line like this-
+Dir/
+
+Imagine we create a folder inside a tracked folder with the same name "Dir", then git will also ignore that folder. Cause we have told git that every folder with the name of "Dir" should be ignored. So if we want to just ignore the folder that exists directly in our git repository, then we need to add another '/' before writing 'Dir/' in a new line like this-
+/Dir/
+
+Note: Git will ignore a file if the file is untracked. The file can be untracked from start or we can untrack a tracked file by giving the command- git rm --cached DB.accdb

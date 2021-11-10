@@ -1,0 +1,9 @@
+Okay, so if we just want to ignore the lol.log file, then we just need to write lol.log in a new line like this-
+lol.log
+But if there are some other files with the same extension(.log), then we just need to put a '*' and write .log in a new line like this-
+*.log
+We also can ignore a folder by writing it's name and put a '/' after that in a new line like this-
+Dir/
+
+
+DB.accdb

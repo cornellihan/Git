@@ -1,0 +1,34 @@
+git config --global user.name "Name"
+git config --global user.email "example@lol.com
+These 2 commands used for just giving a identity for commiting
+
+git init                ==> It just initialize a git repository in a folder.
+git status              ==> Shows how is the tree now and what to commit etc.
+git add --a             ==> Adds/Tracks all the files to the staging area.
+git commit -m " "	==> Just commit all the files with a message.
+git log                 ==> Shows the commit message of a commitment.
+rm -rf .git		==> Removes the .git folder. That means our git repository will vanish after running this command.
+git diff		==> Compares staging area with working directory(modified files).
+git diff --staged	==> Compares previous commit to recent staging area.
+git commit -a -m " "	==> Used to directly stage and commit all tracked files at a time.
+git rm filename		==> Removes a file from the directory and stage that automatically.
+git mv 1.txt 2.txt	==> Renames a file from 1.txt to 2.txt and put it in staging area automatically.
+git rm --cached <file>	==> Untrack the file from git repository (sometimes for ignoring the file,) that was tracked before.
+
+
+git log --stat		 ==> Just do somehting like a brief in short or something like that.
+git log -p		 ==> Will show also what had removed and added (just like the git diff).
+git log --since=2.days	 ==> Last commitment since last 2 days.
+git log --since=2.month	 ==> Last commitment since last 2 month.
+git log --pretty=oneline ==> Will show each commitment in a singel line
+git log --pretty=short	 ==> Shows all the commitment shortly, like without date and time etc.
+git log --pretty=full	 ==> Shows the whole commitment with all info.
+git log --pretty=format:"%h -- %ae"	==> Will show the commitments with commit hash and author's email
+git log --pretty=format:"%d -- %an"	==> Will show the commitments with commit hash and author's name
+
+N.B. = We can also display the commitments with other ways as we want. And we can find the values of the name or something that stands for %h or %ae or anything by just typing "git scm useful options".
+
+git commit --amend		==> Now we can edit the commitment with vim editor.
+git restore --staged <file>	==> Unstage a file.
+git checkout -- <file>		==> Unmodify a file. That means if we modify a file and don't stage that file and use this command, we can find the exact previous file.
+git checkout -f			==> Will match all the modified files with the committed files.
