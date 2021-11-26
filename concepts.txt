@@ -1,3 +1,5 @@
+********************    Introduction of VCS    ********************
+
 Version Control System or VCS is a software that keeps track of files. So we can simply roll back to some previous version of that project easily. And by this, some of developers can work together in a project. There are 3 stages/categories of a Version Control System. And they are Local, Central and Distributed VCS.
 
 Local VCS: Here the software just keeps track of files in our local system. So we can roll back to any previous version of that project whenever we want in our system. But here is a problem. We can create a project and make some version of it. But if somehow our system is cracked, then the whole project will go in vain :)
@@ -13,7 +15,7 @@ Btw GIT has some features.
 
 
 
-Git Ignoring Concepts:
+********************    Git Ignoring Concepts    *********************
 
 If we want to ignore a file, then we can create a file with extension .gitignore and put the filename inside the .gitignore file. So after staging or also commiting the .gitignore file, git will ignore the file that we had put on .gitignore file. That means if we modify that file, git won't show that we need to stage that file. And if we need to ignore other files with the same extension that we had ignored before, then we need to write something like this-
 *.log
@@ -25,3 +27,26 @@ Imagine we create a folder inside a tracked folder with the same name "Dir", the
 /Dir/
 
 Note: Git will ignore a file if the file is untracked. The file can be untracked from start or we can untrack a tracked file by giving the command- git rm --cached DB.accdb
+
+
+
+********************    Working with Remote Git via SSH    ********************
+
+git remote add origin git@github.com:cornellihan/NamJaniNah.git		==> Adds something named origin from the NamJaniNah repository.
+git push -u origin master						==> We can push our local repository's files to the remote repository.
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"			==> Generates private SSH key.
+ssh-keygen -t ed25519 -C "your_email@example.com"			==> The work of this command is same as the before command.
+eval "$(ssh-agent -s)"							==> Checks if the ssh agent is running or not.
+ssh-add ~/.ssh/id_rsa							==> Adds Identity
+ssh-add ~/.ssh/id_ed25519						==> The work of this command is same as the before command.
+tail ~/.ssh/id_rsa.pub							==> Gives the SSH key.
+clip < ~/.ssh/id_ed25519.pub						==> The work of this command is same as the before command.
+
+
+
+********************    HPPTS    ********************
+git remote add origin https://github.com/cornellihan/Demo.git		==> Adds something named origin from the Demo repository.
+git remote -v								==> Shows where we will push/pull our projectsgit remote add origin.
+git push -u origin another:secondary					==> Push the 'another' branch to remote with the name 'secondary'.
+git push origin	master							==> Repush our local repository to remote by this command.
+git push -d origin branchName						==> Delete the branch form the remote repository.
